@@ -8,9 +8,9 @@ function App() {
 
     <>
       <NavBar />
-      <br />
+
       <Hero />
-      <br />
+
       <Footer />
     </>
 
