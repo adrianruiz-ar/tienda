@@ -5,7 +5,7 @@ function CartWidget() {
 
     return(
 
-        <p className="icono"><IoMdCart size={40}/></p>
+        <p className="icono"><IoMdCart size={30}/></p>
 
     )
 
