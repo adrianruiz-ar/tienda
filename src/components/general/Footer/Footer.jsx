@@ -1,11 +1,11 @@
 import './Footer.css';
 
-function Footer() {
+function Footer(props) {
 
     return (
 
         <footer>
-            <p>Dev Shop - Copyright © 2020</p>
+            <p>{props.leyenda}</p>
         </footer>
         
     )

@@ -11,7 +11,7 @@ function App() {
 
       <Hero />
 
-      <Footer />
+      <Footer leyenda="Dev Store - Copyright © 2020"/>
     </>
 
   );

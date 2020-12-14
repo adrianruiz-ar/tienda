@@ -1,7 +1,8 @@
 import './NavBar.css';
 
-import { FcShop } from 'react-icons/fc';
-import { FcMultipleInputs } from 'react-icons/fc';
+import { IoIosHome } from 'react-icons/io';
+import NavItem from '../NavItem/NavItem';
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar() {
 
@@ -9,19 +10,19 @@ function NavBar() {
 
         <>
 
-            <div className="titulo"><h1>Dev Shop</h1></div>
+            <div className="titulo"><h1>Dev Store</h1></div>
 
                 <nav>
-                    <p><FcShop size={50}/></p>
+                    <p><IoIosHome size={40}/></p>
 
                     <ul>
-                        <li>Lenguajes</li>
-                        <li>Librerías</li>
-                        <li>Frameworks</li>
-                        <li>Herramientas</li>
+                        <NavItem categoria="Lenguajes" />
+                        <NavItem categoria="Librerías" />
+                        <NavItem categoria="Frameworks" />
+                        <NavItem categoria="Herramientas" />
                     </ul>
 
-                    <p><FcMultipleInputs size={50}/></p>
+                    <CartWidget />
                 </nav>
 
         </>
