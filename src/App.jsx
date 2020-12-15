@@ -2,7 +2,7 @@ import './styles/App.css';
 
 import NavBar from './components/general/NavBar/NavBar';
 import Hero from './components/Home/Hero';
-import ProductCard from './components/general/ProductCard/ProductCard';
+import BestCard from './components/general/BestCard/BestCard';
 import Footer from './components/general/Footer/Footer';
 
 function App() {
@@ -13,10 +13,7 @@ function App() {
 
       <Hero />
 
-      <ProductCard titulo="HTML 5" precio="550"/>
-      <ProductCard titulo="CSS 3" precio="650"/>
-      <ProductCard titulo="JAVASCRIPT" precio="850"/>
-      <ProductCard titulo="REACT JS" precio="1050"/>
+      <BestCard />
 
       <Footer leyenda="Dev Store - Copyright © 2020"/>
 
