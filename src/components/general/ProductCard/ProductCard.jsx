@@ -7,7 +7,7 @@ function ProductCard(props) {
     return(
 
         <article>
-            <div><IoIosLaptop size={50}/></div>
+            <div className="imgCard"><IoIosLaptop size={50}/></div>
             <h3>{props.titulo}</h3>
             <p>$ {props.precio}</p>
         </article>

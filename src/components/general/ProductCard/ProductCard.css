@@ -3,3 +3,8 @@ article {
     border-radius: 1rem;
     padding: 30px;
 }
+
+article .imgCard {
+    background-color: #d6e0f0;
+    border-radius: 1rem;
+}

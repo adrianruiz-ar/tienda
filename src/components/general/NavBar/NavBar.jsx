@@ -13,7 +13,7 @@ function NavBar() {
             <div className="titulo"><h1>Dev Store</h1></div>
 
                 <nav>
-                    <p><IoIosHome size={40}/></p>
+                    <p><IoIosHome size={30}/></p>
 
                     <ul>
                         <NavItem categoria="Lenguajes" />

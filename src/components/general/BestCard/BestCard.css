@@ -3,6 +3,12 @@
     padding: 40px;
 }
 
+.cursosDestacados h2 {
+    text-transform: uppercase;
+    color: #393b44;
+    font-weight: 900;
+}
+
 .listadoCursos {
     display: flex;
     align-items: center;
