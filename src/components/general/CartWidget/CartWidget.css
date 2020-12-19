@@ -1,8 +1,18 @@
-.icono {
-    color: white;
+.cartWidget {
+    height: 80vh;
+    width: 20%;
+    position: fixed;
+    right: 0;
+    top: 10%;
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-.icono:hover {
-    color: #d6e0f0;
-    cursor: pointer;
+.open {
+    display: block;
+}
+
+.close {
+    display: none;
 }

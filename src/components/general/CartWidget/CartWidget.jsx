@@ -1,11 +1,13 @@
 import './CartWidget.css';
-import { IoMdCart } from 'react-icons/io';
 
-function CartWidget() {
+
+function CartWidget( {show} ) {
 
     return(
 
-        <p className="icono"><IoMdCart size={30}/></p>
+        <div className={`cartWidget ${show ? 'open' : 'close'} `}>
+            <span>Cerrar</span>
+        </div>
 
     )
 

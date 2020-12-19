@@ -3,7 +3,7 @@ function NavItem(props) {
     return (
 
         <li>
-            <a href="nada">{props.categoria}</a>
+            <a href="devstore">{props.categoria}</a>
         </li>
     )
 

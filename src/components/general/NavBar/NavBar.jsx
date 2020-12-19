@@ -1,29 +1,44 @@
+import {useState} from 'react';
 import './NavBar.css';
 
-import { IoIosHome } from 'react-icons/io';
 import NavItem from '../NavItem/NavItem';
+import { IoIosHome, IoMdCart } from 'react-icons/io';
 import CartWidget from '../CartWidget/CartWidget';
 
-function NavBar() {
+
+function NavBar(action) {
+
+    const [showCartWidget, setShowCartWidget] = useState(false);
+    // eslint-disable-next-line
+
+    const openCartWidget = () => {
+        setShowCartWidget(true);
+    }
+
 
     return (
 
         <>
 
-            <div className="titulo"><h1>Dev Store</h1></div>
+            <p className="titulo"><h1>Dev Store</h1></p>
 
-                <nav>
-                    <p><IoIosHome size={30}/></p>
+            <nav>
+                <p><IoIosHome size={30}/></p>
 
-                    <ul>
-                        <NavItem categoria="Lenguajes" />
-                        <NavItem categoria="Librerías" />
-                        <NavItem categoria="Frameworks" />
-                        <NavItem categoria="Herramientas" />
-                    </ul>
+                <ul>
+                    <NavItem categoria="Lenguajes" />
+                    <NavItem categoria="Librerías" />
+                    <NavItem categoria="Frameworks" />
+                    <NavItem categoria="Herramientas" />
+                </ul>
 
-                    <CartWidget />
-                </nav>
+                <p className="iconoCart" onClick={openCartWidget}><IoMdCart size={30}/></p>
+
+                <div className="contadorCart">
+                    <CartWidget show={showCartWidget} /> 
+                    <span>0</span>
+                </div>
+            </nav>
 
         </>
 

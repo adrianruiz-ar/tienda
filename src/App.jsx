@@ -2,7 +2,7 @@ import './styles/App.css';
 
 import NavBar from './components/general/NavBar/NavBar';
 import Hero from './components/Home/Hero';
-import BestCard from './components/general/BestCard/BestCard';
+import BestCardContainer from './components/general/BestCardContainer/BestCardContainer';
 import Footer from './components/general/Footer/Footer';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
 
       <Hero />
 
-      <BestCard />
+      <BestCardContainer />
 
       <Footer leyenda="Dev Store - Copyright © 2020"/>
 

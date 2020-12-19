@@ -1,9 +1,9 @@
-import ProductCard from '../../general/ProductCard/ProductCard';
+import ProductCard from '../ProductCard/ProductCard';
 
-import './BestCard.css';
+import './BestCardContainer.css';
 
 
-function BestCard() {
+function BestCardContainer() {
 
     return(
 
@@ -23,4 +23,4 @@ function BestCard() {
     )
 }
 
-export default BestCard;
+export default BestCardContainer;
