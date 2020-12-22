@@ -16,3 +16,7 @@
 .close {
     display: none;
 }
+
+.cartWidget button {
+    border-radius: 10px;
+}

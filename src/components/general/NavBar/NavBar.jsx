@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import './NavBar.css';
 
-import NavItem from '../NavItem/NavItem';
 import { IoIosHome, IoMdCart } from 'react-icons/io';
+import NavItem from '../NavItem/NavItem';
 import CartWidget from '../CartWidget/CartWidget';
 
 
@@ -12,9 +12,8 @@ function NavBar(action) {
     // eslint-disable-next-line
 
     const openCartWidget = () => {
-        setShowCartWidget(true);
+        setShowCartWidget(!showCartWidget);
     }
-
 
     return (
 
@@ -35,7 +34,7 @@ function NavBar(action) {
                 <p className="iconoCart" onClick={openCartWidget}><IoMdCart size={30}/></p>
 
                 <div className="contadorCart">
-                    <CartWidget show={showCartWidget} /> 
+                    <CartWidget show={showCartWidget} set={openCartWidget} /> 
                     <span>0</span>
                 </div>
             </nav>

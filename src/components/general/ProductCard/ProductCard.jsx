@@ -8,7 +8,7 @@ import { IoIosLaptop } from "react-icons/io";
 
 function ProductCard(props) {
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
 
     const sumar = () => {
         setCount(count + 1);
@@ -16,6 +16,10 @@ function ProductCard(props) {
 
     const restar = () => {
         setCount(count - 1);
+    }
+
+    const sumarAlCarro = () => {
+        alert(`Agregaste ${count} al Carrito!`);
     }
 
     return(
@@ -27,6 +31,8 @@ function ProductCard(props) {
             <p>$ {props.precio}</p>
 
             <ItemCount count={count} sumar={sumar} restar={restar} />
+
+            <button onClick={sumarAlCarro}>Agregar al Carrito</button>
 
         </article>
 

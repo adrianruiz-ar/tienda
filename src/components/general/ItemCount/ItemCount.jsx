@@ -5,7 +5,7 @@ function ItemCount(props) {
     return (
 
         <div className="contadores">
-            <button onClick={ () => props.restar()}>-</button>
+            <button onClick={ () => props.restar()} disabled={props.count < 2 ? 'disabled' : null }>-</button>
 
             <p>{props.count}</p>
 

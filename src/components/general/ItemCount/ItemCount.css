@@ -4,6 +4,15 @@
     justify-content: space-between;
 }
 
+.contadores p {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #d6e0f0;
+    border-radius: 1rem;
+    padding: 5px;
+}
+
+
 button:hover {
     cursor: pointer;
 }

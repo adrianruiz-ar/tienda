@@ -1,12 +1,12 @@
 import './CartWidget.css';
 
 
-function CartWidget( {show} ) {
+function CartWidget( {show, set} ) {
 
     return(
 
         <div className={`cartWidget ${show ? 'open' : 'close'} `}>
-            <span>Cerrar</span>
+            <button onClick={set}>Cerrar</button>
         </div>
 
     )
