@@ -14,7 +14,7 @@ function ProductCard(props) {
             <h3>{props.titulo}</h3>
             <p>$ {props.precio}</p>
 
-            <ItemCount />
+            <ItemCount cupo={props.cupo}/>
 
         </article>
 

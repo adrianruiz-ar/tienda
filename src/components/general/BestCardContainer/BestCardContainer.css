@@ -15,3 +15,7 @@
     justify-content: space-around;
     padding-top: 20px;
 }
+
+.listadoCursos li {
+    list-style: none;
+}
