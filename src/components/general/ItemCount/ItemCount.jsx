@@ -23,11 +23,11 @@ function ItemCount(props) {
         <>
 
             <div className="contadores">
-                <button onClick={ () => restar()} disabled={count <= 1 ? 'disabled' : null }>-</button>
+                <button onClick={restar} disabled={count <= 1 ? 'disabled' : null }>-</button>
 
                 <p>{count}</p>
 
-                <button onClick={ () => sumar()} disabled={count >= (props.cupo) ? 'disabled' : null }>+</button>
+                <button onClick={sumar} disabled={count >= (props.cupo) ? 'disabled' : null }>+</button>
             </div>
 
             <div>
