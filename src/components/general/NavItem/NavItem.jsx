@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 function NavItem(props) {
 
     return (
 
         <li>
-            <a href="devstore">{props.categoria}</a>
+            <Link to={`/category/${props.ruta}`}> {props.categoria} </Link>
         </li>
     )
 

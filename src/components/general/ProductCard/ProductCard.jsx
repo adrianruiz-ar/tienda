@@ -2,6 +2,7 @@ import './ProductCard.css';
 import ItemCount from '../ItemCount/ItemCount';
 
 import { IoIosLaptop } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 
 function ProductCard(props) {
@@ -15,6 +16,8 @@ function ProductCard(props) {
             <p>$ {props.precio}</p>
 
             <ItemCount cupo={props.cupo}/>
+
+            <Link to={`/detail/${props.id}`}>Ver Detalle</Link>
 
         </article>
 

@@ -23,7 +23,7 @@ nav {
     justify-content: space-around;
 }
 
-nav p {
+nav p a {
     color: white;
 }
 

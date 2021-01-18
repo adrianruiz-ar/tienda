@@ -7,6 +7,13 @@ import Hero from './components/Home/Hero';
 import BestCardContainer from './components/general/BestCardContainer/BestCardContainer';
 import Footer from './components/general/Footer/Footer';
 
+import Cart from "./components/Cart/Cart";
+import Category from "./components/Category/Category";
+import Checkout from "./components/Checkout/Checkout";
+import DetailContainer from './components/Detail/DetailContainer';
+import Error404 from "./components/general/Error404/Error404";
+
+
 function App() {
   return (
 
@@ -16,8 +23,26 @@ function App() {
       <Hero />
 
       <Switch >
-        <Route path="/" >
+        <Route exact path="/" >
           <BestCardContainer />
+        </Route>
+        <Route exact path="/cart" >
+          <Cart />
+        </Route>
+        <Route exact path="/category" >
+          <Category />
+        </Route>
+        <Route exact path="/category/:categoryname?" >
+          <BestCardContainer />
+        </Route>
+        <Route exact path="/checkout" >
+          <Checkout />
+        </Route>
+        <Route exact path="/detail/:idcurso?" >
+          <DetailContainer />
+        </Route>
+        <Route path="*" >
+          <Error404 />
         </Route>
         
       </Switch>

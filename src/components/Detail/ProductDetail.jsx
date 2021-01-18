@@ -1,9 +1,11 @@
+import './ProductDetail.css';
+
 const ProductDetail = ({item}) => {
 
     return (
         <article>
-            <h1>{item.nombre}</h1>
-            <img src={item.foto} alt="curso html 5"/>
+            <h1>{item.titulo}</h1>
+            <img src={item.foto} alt=""/>
             <p>{item.descripcion}</p>
             <p>{item.precio}</p>
             <button>Agregar al carrito</button>

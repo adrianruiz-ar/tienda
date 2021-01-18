@@ -2,6 +2,8 @@ import {useState} from 'react';
 import './NavBar.css';
 
 import { IoIosHome, IoMdCart } from 'react-icons/io';
+import { Link } from "react-router-dom";
+
 import NavItem from '../NavItem/NavItem';
 import CartWidget from '../CartWidget/CartWidget';
 
@@ -22,13 +24,13 @@ function NavBar(action) {
             <p className="titulo"><h1>Dev Store</h1></p>
 
             <nav>
-                <p><IoIosHome size={30}/></p>
+                <p><Link to="/"><IoIosHome size={30}/></Link></p>
 
                 <ul>
-                    <NavItem categoria="Lenguajes" />
-                    <NavItem categoria="Librerías" />
-                    <NavItem categoria="Frameworks" />
-                    <NavItem categoria="Herramientas" />
+                    <NavItem categoria="Lenguajes" ruta="lenguajes"/>
+                    <NavItem categoria="Librerías" ruta="librerias"/>
+                    <NavItem categoria="Frameworks" ruta="frameworks"/>
+                    <NavItem categoria="Herramientas" ruta="herramientas"/>
                 </ul>
 
                 <p className="iconoCart" onClick={openCartWidget}><IoMdCart size={30}/></p>
