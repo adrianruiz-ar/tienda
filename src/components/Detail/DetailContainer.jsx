@@ -10,12 +10,13 @@ const DetailContainer = () => {
 
     const [cursos, setCursos] = useState(null);
 
-    const {idcurso} = useParams();
-    
+    const {id_curso} = useParams();
+
     const getCursos = new Promise((resolve, reject) => {
 
         setTimeout(() => {
-            const cursoDetalle = listaCursos.find( curso => curso.id == idcurso);
+            // eslint-disable-next-line
+            const cursoDetalle = listaCursos.find( curso => curso.id == id_curso);
             resolve(cursoDetalle);
         }, 1000);
 
@@ -25,6 +26,7 @@ const DetailContainer = () => {
         getCursos
             .then(response => setCursos(response))
             .catch(error => console.log(error));
+            // eslint-disable-next-line
     }, []);
 
     return (

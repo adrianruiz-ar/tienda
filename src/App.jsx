@@ -32,13 +32,13 @@ function App() {
         <Route exact path="/category" >
           <Category />
         </Route>
-        <Route exact path="/category/:categoryname?" >
+        <Route exact path="/category/:category_name?" >
           <BestCardContainer />
         </Route>
         <Route exact path="/checkout" >
           <Checkout />
         </Route>
-        <Route exact path="/detail/:idcurso?" >
+        <Route exact path="/detail/:id_curso?" >
           <DetailContainer />
         </Route>
         <Route path="*" >

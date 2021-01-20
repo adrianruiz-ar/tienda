@@ -12,15 +12,15 @@ function BestCardContainer() {
 
     const [items, setItems] = useState([]);
 
-    const {categoryname} = useParams();
+    const {category_name} = useParams();
 
     const getCursos = new Promise((resolve, reject) => {
 
         setTimeout(() => {
             
-            if(categoryname){
-                const cursoDetalle = listaCursos.find( curso => curso.categoria == categoryname);
-                resolve(cursoDetalle);  
+            if(category_name){
+                const cursoDetalle = listaCursos.filter( curso => curso.categoria === category_name);
+                resolve(cursoDetalle);
             }
             else{
                 const cursosDestacados = listaCursos.filter(curso => curso.destacado);
@@ -33,16 +33,22 @@ function BestCardContainer() {
     useEffect(() => {
         getCursos.then(rta => setItems(rta));
         // eslint-disable-next-line
-    }, [] )
+    }, [category_name] )
   
 
     return(
 
         <div className="cursosDestacados">
+            
+            {
+                category_name ?
 
-            <p><h2>Mejores Cursos</h2></p>
+                    <p><h2>Cursos de {category_name} para Desarrollo</h2></p>
 
-         
+                :
+                    <p><h2>Los Mejores Cursos</h2></p>
+            }
+
             <ul className="listadoCursos">
                 {
                     items.length ?
