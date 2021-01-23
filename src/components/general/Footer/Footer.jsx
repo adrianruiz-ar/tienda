@@ -5,7 +5,7 @@ function Footer(props) {
     return (
 
         <footer>
-            <p>{props.leyenda}</p>
+            <p>{props.leyenda} - by Adrian Ruiz</p>
         </footer>
         
     )

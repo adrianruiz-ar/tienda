@@ -2,6 +2,7 @@ import './styles/App.css';
 
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
+import Header from "./components/general/Header/Header";
 import NavBar from './components/general/NavBar/NavBar';
 import Hero from './components/Home/Hero';
 import BestCardContainer from './components/general/BestCardContainer/BestCardContainer';
@@ -19,6 +20,7 @@ function App() {
 
     <BrowserRouter >
 
+      <Header />
       <NavBar />
       <Hero />
 

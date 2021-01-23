@@ -33,14 +33,17 @@ const DetailContainer = () => {
         <>
             {
                 cursos ?
-                <div>
+                <div className="detalleContenedor">
                     <ProductDetail item={cursos} />
 
-                    <div>
-                        Cursos Recomendados
+                    <div className="recomendados">
+                        <p><h3>Cursos Recomendados</h3></p>
                     </div>
                 </div> : 
-                <p>Cargando Cursos...</p>
+                <div className="cargando">
+                    <p><h3>Cargando Cursos...</h3></p>
+                </div>
+                
             }
         </>
     )

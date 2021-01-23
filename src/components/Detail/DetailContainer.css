@@ -1,0 +1,16 @@
+.detalleContenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recomendados {
+    padding-top: 50px;
+    
+}
+
+.cargando {
+    padding-top: 20px;
+    text-align: center;
+}
