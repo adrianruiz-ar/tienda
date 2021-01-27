@@ -1,5 +1,6 @@
 import './styles/App.css';
 
+import { useState } from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import Header from "./components/general/Header/Header";
@@ -14,44 +15,59 @@ import Checkout from "./components/Checkout/Checkout";
 import DetailContainer from './components/Detail/DetailContainer';
 import Error404 from "./components/general/Error404/Error404";
 
+import { Store } from "./store";
+
+
 
 function App() {
+
+  const [data, setData] = useState({
+    items: [],
+    cantidad: 0,
+  })
+
+
   return (
 
-    <BrowserRouter >
+    <Store.Provider value={[data, setData]}>
 
-      <Header />
-      <NavBar />
-      <Hero />
+      <BrowserRouter >
 
-      <Switch >
-        <Route exact path="/" >
-          <BestCardContainer />
-        </Route>
-        <Route exact path="/cart" >
-          <Cart />
-        </Route>
-        <Route exact path="/category" >
-          <Category />
-        </Route>
-        <Route exact path="/category/:category_name?" >
-          <BestCardContainer />
-        </Route>
-        <Route exact path="/checkout" >
-          <Checkout />
-        </Route>
-        <Route exact path="/detail/:id_curso?" >
-          <DetailContainer />
-        </Route>
-        <Route path="*" >
-          <Error404 />
-        </Route>
-        
-      </Switch>
+        <Header />
+        <NavBar />
+        <Hero />
 
-      <Footer leyenda="Dev Store - Copyright © 2020"/>
+        <Switch >
+
+          <Route exact path="/" >
+            <BestCardContainer />
+          </Route>
+          <Route exact path="/cart" >
+            <Cart />
+          </Route>
+          <Route exact path="/category" >
+            <Category />
+          </Route>
+          <Route exact path="/category/:category_name?" >
+            <BestCardContainer />
+          </Route>
+          <Route exact path="/checkout" >
+            <Checkout />
+          </Route>
+          <Route exact path="/detail/:id_curso?" >
+            <DetailContainer />
+          </Route>
+          <Route path="*" >
+            <Error404 />
+          </Route>
+          
+        </Switch>
+
+        <Footer leyenda="Dev Store - Copyright © 2020"/>
+      
+      </BrowserRouter>
     
-    </BrowserRouter>
+    </Store.Provider>
 
   );
 }

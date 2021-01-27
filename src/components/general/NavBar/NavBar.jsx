@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import './NavBar.css';
 
 import { IoMdCart } from 'react-icons/io';
@@ -6,8 +6,12 @@ import { IoMdCart } from 'react-icons/io';
 import NavItem from '../NavItem/NavItem';
 import CartWidget from '../CartWidget/CartWidget';
 
+import {Store} from '../../../store';
+
 
 function NavBar(action) {
+
+    const [data, setData] = useContext(Store);
 
     const [showCartWidget, setShowCartWidget] = useState(false);
     // eslint-disable-next-line
@@ -32,7 +36,7 @@ function NavBar(action) {
                 <div className="contadorCart">
                     <div className="iconoCart" onClick={openCartWidget}><IoMdCart size={30}/></div>
                     <div><CartWidget show={showCartWidget} set={openCartWidget} /></div> 
-                    <div><span>0</span></div>
+                    <div><span>{data.cantidad}</span></div>
                 </div>
 
             </nav>

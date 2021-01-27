@@ -1,8 +1,16 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 
 import './ItemCount.css';
 
+import {Store} from '../../../store';
+
+import { useHistory } from 'react-router-dom';
+
 function ItemCount(props) {
+
+    const history = useHistory();
+
+    const [data, setData] = useContext(Store);
 
     const [count, setCount] = useState(1);
 
@@ -15,8 +23,19 @@ function ItemCount(props) {
     }
 
     const sumarAlCarro = () => {
-        alert(`Agregaste ${count} al Carrito!`);
+        // alert(`Agregaste ${count} al Carrito!`);
+
+        setData({
+            ...data,
+            cantidad: data.cantidad + count,
+            items: [...data.items, props],
+        });
+
+        history.push('/cart');
+        
     }
+
+    console.log(data);
 
     return (
 
@@ -27,7 +46,7 @@ function ItemCount(props) {
 
                 <p>{count}</p>
 
-                <button onClick={sumar} disabled={count >= (props.cupo) ? 'disabled' : null }>+</button>
+                <button onClick={sumar} disabled={count >= (props.curso.cupo) ? 'disabled' : null }>+</button>
             </div>
 
             <div>
