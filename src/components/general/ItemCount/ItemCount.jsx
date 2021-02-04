@@ -23,19 +23,17 @@ function ItemCount(props) {
     }
 
     const sumarAlCarro = () => {
-        // alert(`Agregaste ${count} al Carrito!`);
 
         setData({
             ...data,
             cantidad: data.cantidad + count,
             items: [...data.items, props],
+            precioTotal: data.precioTotal + (props.curso.precio * count)
         });
 
         history.push('/cart');
         
     }
-
-    console.log(data);
 
     return (
 

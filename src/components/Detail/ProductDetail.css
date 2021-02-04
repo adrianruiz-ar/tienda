@@ -2,3 +2,11 @@ article {
     width: 60%;
     margin-top: 30px;
 }
+
+article img {
+    max-width: 100px;
+}
+
+article h1 {
+    text-transform: uppercase;
+}

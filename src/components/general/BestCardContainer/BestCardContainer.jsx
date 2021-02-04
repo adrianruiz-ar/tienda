@@ -5,33 +5,33 @@ import ProductCard from '../ProductCard/ProductCard';
 
 import './BestCardContainer.css';
 
-import { listaCursos } from "../../../cursos";
+import { getFirestore } from "../../../db";
 
 
 function BestCardContainer() {
+
+    const db = getFirestore();
 
     const [items, setItems] = useState([]);
 
     const {category_name} = useParams();
 
-    const getCursos = new Promise((resolve, reject) => {
+    const getCursosFromDB = () => {
 
-        setTimeout(() => {
-            
-            if(category_name){
-                const cursoDetalle = listaCursos.filter( curso => curso.categoria === category_name);
-                resolve(cursoDetalle);
-            }
-            else{
-                const cursosDestacados = listaCursos.filter(curso => curso.destacado);
-                resolve(cursosDestacados);
-            }
-            
-        }, 1000)
-    })
+        db.collection('cursos').where("destacado", "==", true).get()
+            .then(docs => {
+                let arr = [];
+                docs.forEach(doc => {
+                    arr.push({id: doc.id, data: doc.data()})
+                })
+
+                setItems(arr);
+            })
+            .catch(e => console.log(e));
+    }
     
     useEffect(() => {
-        getCursos.then(rta => setItems(rta));
+        getCursosFromDB(rta => setItems(rta));
         // eslint-disable-next-line
     }, [category_name] )
   
@@ -54,13 +54,14 @@ function BestCardContainer() {
                     items.length ?
                         <>
                             {
-                                items.map((item, id) =>(  
-                                    <li key={id}>
+                                items.map((item) =>(  
+                                    <li key={item.id}>
                                         <ProductCard
-                                            titulo={item.titulo}
-                                            precio={item.precio}
-                                            cupo={item.cupo}
+                                            titulo={item.data.titulo}
+                                            precio={item.data.precio}
+                                            cupo={item.data.cupo}
                                             id={item.id}
+                                            img={item.data.img}
                                         />
                                     </li>
                                  ))

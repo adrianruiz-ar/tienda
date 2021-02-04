@@ -5,8 +5,15 @@ article {
 }
 
 article .imgCard {
-    background-color: #d6e0f0;
     border-radius: 1rem;
+}
+
+article .imgCard img {
+    max-width: 100px;
+}
+
+article h3 {
+    text-transform: uppercase;
 }
 
 article button {

@@ -1,0 +1,29 @@
+.cart h2 {
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 30px;
+}
+
+.cart .contenido {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.cart .contenido .detalle h3 {
+    text-transform: uppercase;
+}
+
+.cart .contenido .detalle {
+    margin: 5% 0 0 10%;
+    padding: 50px;
+}
+
+.cart .contenido .totales {
+    margin: 5% 0 0 10%;
+    padding: 50px;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+

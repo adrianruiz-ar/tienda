@@ -3,13 +3,13 @@ import './ProductDetail.css';
 import ItemCount from '../general/ItemCount/ItemCount';
 
 const ProductDetail = ({item}) => {
-
+    
     return (
         <article>
+            <img src={`../courses/${item.img}`} alt="cursos de programación"/>
             <h1>Curso: {item.titulo}</h1>
-            <img src={item.foto} alt=""/>
             <p>Descripción: {item.descripcion}</p>
-            <p>Costo: $ {item.precio}</p>
+            <p>Costo: <strong>$ {item.precio}</strong></p>
 
 
             <ItemCount curso={item}/>

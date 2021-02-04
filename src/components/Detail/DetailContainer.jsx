@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import './DetailContainer.css';
 import ProductDetail from './ProductDetail';
 
-import { listaCursos } from "../../cursos";
+import { getFirestore } from "../../db";
 
 const DetailContainer = () => {
 
@@ -12,6 +12,9 @@ const DetailContainer = () => {
 
     const {id_curso} = useParams();
 
+    const db = getFirestore();
+
+    /*
     const getCursos = new Promise((resolve, reject) => {
 
         setTimeout(() => {
@@ -21,11 +24,16 @@ const DetailContainer = () => {
         }, 1000);
 
     });
+    */
 
     useEffect(() => {
-        getCursos
-            .then(response => setCursos(response))
-            .catch(error => console.log(error));
+        db.collection('cursos').doc(id_curso).get()
+            .then(doc => {
+                if(doc.exists) {
+                    setCursos(doc.data());
+                }
+            })
+            .catch(e => console.log(e));
             // eslint-disable-next-line
     }, []);
 
@@ -34,11 +42,11 @@ const DetailContainer = () => {
             {
                 cursos ?
                 <div className="detalleContenedor">
+
+                    <h2>Detalle del Cursos</h2>
+
                     <ProductDetail item={cursos} />
 
-                    <div className="recomendados">
-                        <p><h3>Cursos Recomendados</h3></p>
-                    </div>
                 </div> : 
                 <div className="cargando">
                     <p><h3>Cargando Cursos...</h3></p>

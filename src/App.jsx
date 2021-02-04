@@ -24,6 +24,7 @@ function App() {
   const [data, setData] = useState({
     items: [],
     cantidad: 0,
+    precioTotal: 0,
   })
 
 
@@ -35,11 +36,11 @@ function App() {
 
         <Header />
         <NavBar />
-        <Hero />
 
         <Switch >
 
           <Route exact path="/" >
+            <Hero />
             <BestCardContainer />
           </Route>
           <Route exact path="/cart" >
@@ -47,9 +48,11 @@ function App() {
           </Route>
           <Route exact path="/category" >
             <Category />
+            <BestCardContainer />
           </Route>
           <Route exact path="/category/:category_name?" >
             <BestCardContainer />
+            <Category />
           </Route>
           <Route exact path="/checkout" >
             <Checkout />

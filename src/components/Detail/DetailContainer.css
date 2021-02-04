@@ -5,9 +5,9 @@
     align-items: center;
 }
 
-.recomendados {
-    padding-top: 50px;
-    
+.detalleContenedor h2 {
+    text-transform: uppercase;
+    padding-top: 30px;
 }
 
 .cargando {
