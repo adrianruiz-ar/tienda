@@ -26,4 +26,17 @@
     border-radius: 1rem;
 }
 
+.contenido button {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #d6e0f0;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
+
+.contenido button:hover {
+    background-color: #f1f3f8;
+}
 

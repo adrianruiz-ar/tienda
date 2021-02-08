@@ -5,10 +5,12 @@
     right: 0;
     top: 10%;
     border: solid 1px black;
-    border-radius: 10px;
+    border-radius: 1rem;
     background-color: rgba(0, 0, 0, 0.7);
     text-align: center;
     padding: 10px 5px;
+    color: white;
+    text-transform: uppercase;
 }
 
 .open {
@@ -20,5 +22,6 @@
 }
 
 .cartWidget button {
-    border-radius: 10px;
+    border-radius: 1rem;
+    padding: 5px;
 }

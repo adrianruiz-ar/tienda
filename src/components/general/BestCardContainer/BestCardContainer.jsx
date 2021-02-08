@@ -28,6 +28,7 @@ function BestCardContainer() {
                 setItems(arr);
             })
             .catch(e => console.log(e));
+
     }
     
     useEffect(() => {

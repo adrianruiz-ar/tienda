@@ -52,7 +52,6 @@ function App() {
           </Route>
           <Route exact path="/category/:category_name?" >
             <BestCardContainer />
-            <Category />
           </Route>
           <Route exact path="/checkout" >
             <Checkout />

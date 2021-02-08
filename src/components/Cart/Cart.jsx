@@ -10,6 +10,13 @@ const Cart = () => {
 
     const [data, setData] = useContext(Store);
 
+    const eliminarCurso = () => {
+
+        
+        
+    }
+
+
     return (
 
         <div className="cart">
@@ -27,10 +34,12 @@ const Cart = () => {
                                 <p>Cantidad: {data.cantidad}</p>
                                 <p>Costo por Curso: <strong>$ {item.curso.precio}</strong></p>
                                 <p>Total: <strong>$ {item.curso.precio * data.cantidad}</strong></p>
+                                <button onClick={eliminarCurso()}>Eliminar</button>
                             </div>
 
                         ))
                     }
+                    
                 </div>
 
                 <div className="totales">

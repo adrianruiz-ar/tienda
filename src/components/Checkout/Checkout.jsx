@@ -54,8 +54,11 @@ const Checkout = () => {
             {
                 !ventaEstado ?
                 <form onSubmit={handleSubmitForm}>
-                    <input type="text" value={formPago.nombre} onChange={handleChangeInput} name="nombre" placeholder="Nombre"/>
-                    <input type="text" value={formPago.apellido} onChange={handleChangeInput} name="apellido" placeholder="Apellido"/>
+                    <input type="text" value={formPago.nombre} onChange={handleChangeInput} name="nombre" placeholder="Nombre"/> <br />
+                    <input type="text" value={formPago.apellido} onChange={handleChangeInput} name="apellido" placeholder="Apellido"/> <br />
+                    <input type="text" value={formPago.tarjeta} onChange={handleChangeInput} name="tarjeta" placeholder="Numero Tarjeta"/> <br />
+                    <input type="text" value={formPago.fecha} onChange={handleChangeInput} name="fecha" placeholder="Fecha Vencimiento"/> <br />
+                    <input type="text" value={formPago.codigo} onChange={handleChangeInput} name="codigo" placeholder="Cógido Dorso"/> <br />
 
                     <button>Pagar</button>
                 </form> :

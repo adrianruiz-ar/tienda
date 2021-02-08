@@ -18,9 +18,13 @@ article h3 {
 
 article button {
     margin-top: 20px;
-    background-color: #f1f3f8;
-    color: black;
-    padding: 5px;
-    color: black;
+    padding: 10px;
     text-decoration: none;
+    background-color: #d6e0f0;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
+
+article button:hover {
+    background-color: #f1f3f8;
 }

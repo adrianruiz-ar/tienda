@@ -15,6 +15,8 @@ function CartWidget( {show, set} ) {
         <div className={`cartWidget ${show ? 'open' : 'close'} `}>
             <button onClick={set}>Cerrar</button>
 
+            <p>Cursos Agregados:</p>
+
             <div>
                 {
                     data.items.map(item => <p>{item.curso.titulo}</p>)
