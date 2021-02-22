@@ -9,7 +9,7 @@ function ProductCard(props) {
 
         <article>
             
-            <div className="imgCard"><img src={`courses/${props.img}`} alt="cursos de programación"/></div>
+            <div className="imgCard"><img src={`/courses/${props.img}`} alt="cursos de programación"/></div>
             <h3>{props.titulo}</h3>
             <p>$ {props.precio}</p>
 

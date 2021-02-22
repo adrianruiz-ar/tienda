@@ -11,8 +11,6 @@ const Cart = () => {
     const [data, setData] = useContext(Store);
 
     const eliminarCurso = () => {
-
-        
         
     }
 
@@ -20,36 +18,44 @@ const Cart = () => {
     return (
 
         <div className="cart">
-        
+
             <h2>Carrito: cursos elegidos</h2>
 
-            <div className="contenido">
+                { data.items.length ?
 
-                <div className="detalle">
-                    {
-                        data.items.map(item => (
+                    <div className="contenido">
 
-                            <div>
-                                <h3>* Curso: {item.curso.titulo}</h3>
-                                <p>Cantidad: {data.cantidad}</p>
-                                <p>Costo por Curso: <strong>$ {item.curso.precio}</strong></p>
-                                <p>Total: <strong>$ {item.curso.precio * data.cantidad}</strong></p>
-                                <button onClick={eliminarCurso()}>Eliminar</button>
-                            </div>
+                        <div className="detalle">
+                            {
+                                data.items.map(item => (
 
-                        ))
-                    }
-                    
-                </div>
+                                    <div>
+                                        <h3>* Curso: {item.curso.titulo}</h3>
+                                        <p>Cantidad: {data.cantidad}</p>
+                                        <p>Costo por Curso: <strong>$ {item.curso.precio}</strong></p>
+                                        <p>Total: <strong>$ {item.curso.precio * data.cantidad}</strong></p>
+                                        <button onClick={eliminarCurso()}>Eliminar</button>
+                                    </div>
 
-                <div className="totales">
-                    <p>Cantidad Total de Cursos: {data.cantidad}</p>
-                    <p>Costo Total: $ {data.precioTotal} </p>
-                    <Link to={`/checkout`}><button>Finalizar Compra</button></Link>          
-                </div>
+                                ))
+                            }
+                            
+                        </div>
 
-            </div>
-        
+                        <div className="totales">
+                            <p>Cantidad Total de Cursos: <strong> {data.cantidad} </strong></p>
+                            <p>Costo Total: <strong> $ {data.precioTotal} </strong> </p>
+                            <Link to={`/checkout`}><button>Finalizar Compra</button></Link>          
+                        </div>
+
+                    </div>
+
+                :
+
+                    <h4>Todavía no agregaste Cursos a tu carrito</h4>
+
+                }
+
         </div>
         
 

@@ -30,12 +30,32 @@ function BestCardContainer() {
             .catch(e => console.log(e));
 
     }
+
+    const getCursosCategorias = () => {
+
+        db.collection('cursos').where("categoria", "==", category_name).get()
+            .then(docs => {
+                let arr = [];
+                docs.forEach(doc => {
+                    arr.push({id: doc.id, data: doc.data()})
+                })
+
+                setItems(arr);
+            })
+            .catch(e => console.log(e));
+
+    }
     
     useEffect(() => {
-        getCursosFromDB(rta => setItems(rta));
+
+        category_name ?
+            getCursosCategorias(rta => setItems(rta))
+        : 
+            getCursosFromDB(rta => setItems(rta));
+
         // eslint-disable-next-line
     }, [category_name] )
-  
+
 
     return(
 
